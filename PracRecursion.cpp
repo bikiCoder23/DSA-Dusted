@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 #include <algorithm>
 using namespace std;
 
@@ -56,7 +57,43 @@ int main()
     return 0;
 }*/
 
-// Q4. Fibonacci
+// Q4. Finding the sum of the digits of an input number
+/*int digiSum(int n)
+{
+    if (n == 0)
+        return 0;
+    int r = n % 10;
+    return digiSum(n / 10) + r;
+}
+
+int main()
+{
+    int n;
+    cout << "Enter the number ";
+    cin >> n;
+    cout << "The sum of the digits of the input number is " << digiSum(n);
+    return 0;
+}*/
+
+// Q5. Reverse an input number
+/*int reverseNum(int n, int sum)
+{
+    if (n == 0)
+        return sum;
+    int r = n % 10;
+    sum = sum * 10 + r;
+    return reverseNum(n / 10, sum);
+}
+int main()
+{
+    int n, sum = 0;
+    cout << "Enter the number ";
+    cin >> n;
+    cout << "The reverse of the input number is " << reverseNum(n, sum);
+    return 0;
+}*/
+
+// Q6. Fibonacci
 /*int fibonacci(int n)
 {
     if (n == 1)
@@ -75,7 +112,7 @@ int main()
     return 0;
 }*/
 
-// Q5. Check if the array is sorted or not
+// Q7. Check if the array is sorted or not
 /*bool Check(int arr[], int n)
 {
     if (n == 1)
@@ -103,7 +140,7 @@ int main()
     return 0;
 }*/
 
-// Q6. Print the numbers  till n in decreasing order
+// Q8. Print the numbers  till n in decreasing order
 /*void decP(int n)
 {
     if (n == 0)
@@ -122,7 +159,7 @@ int main()
     return 0;
 }*/
 
-// Q7. Print the numbers  till n in increasing order
+// Q9. Print the numbers  till n in increasing order
 /*void incP(int n)
 {
     if (n == 0)
@@ -141,7 +178,7 @@ int main()
     return 0;
 }*/
 
-// Q8. First and last occurance of an element in an array
+// Q10. First and last occurance of an element in an array
 /*int firstOccur(int arr[], int n, int i, int key)
 {
     if (i == n)
@@ -194,7 +231,7 @@ int main()
     return 0;
 }*/
 
-// Q9 Reverse a string using recursion
+// Q11. Reverse a string using recursion
 /*void reverse(string str)
 {
     if (str.length() == 0)
@@ -213,7 +250,7 @@ int main()
     return 0;
 }*/
 
-// Q9. Replace Pi in the string with 3.14
+// Q12. Replace Pi in the string with 3.14
 /*void PiConverter(string str)
 {
     if (str.length() == 0)
@@ -240,7 +277,7 @@ int main()
     return 0;
 }*/
 
-// Q10. Tower of Hanoi
+// Q13. Tower of Hanoi
 /*void Hanoi(int n, char src, char helper, char dest)
 {
     if (n == 0)
@@ -259,7 +296,7 @@ int main()
     return 0;
 }*/
 
-// Q11. Remove duplicates from a string
+// Q14. Remove duplicates from a string
 /*string remove(string str)
 {
     if (str.length() == 0)
@@ -280,7 +317,7 @@ int main()
     return 0;
 }*/
 
-// Q12. Move all the 'x' in the input string to the end of string
+// Q15. Move all the 'x' in the input string to the end of string
 /*string moveX(string str)
 {
     if (str.length() == 0)
@@ -299,7 +336,7 @@ int main()
     return 0;
 }*/
 
-// Q13. Generate all the substrings in the input string
+// Q16. Generate all the substrings in the input string
 /*void allSubstr(string str, string ans)
 {
     if (str.length() == 0)
@@ -320,7 +357,7 @@ int main()
     return 0;
 }*/
 
-// Q14. Generate all the substrings along with its ASCII code in the input string
+// Q17. Generate all the substrings along with its ASCII code in the input string
 /*void asciiSubstr(string str, string ans)
 {
     if (str.length() == 0)
@@ -344,7 +381,7 @@ int main()
     return 0;
 }*/
 
-// Q15. All possible word from phone digits
+// Q18. All possible word from phone digits
 /*string Keypad[] = {" ", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 void keypad(string str, string ans)
 {
@@ -366,7 +403,7 @@ int main()
     return 0;
 }*/
 
-// Q16. Generate all possible permutations of the input string
+// Q19. Generate all possible permutations of the input string
 /*void permute(string str, string ans)
 {
     if (str.length() == 0)
@@ -388,7 +425,7 @@ int main()
     return 0;
 }*/
 
-// Q17. Number of possible paths to reach a ending point in Gameboard
+// Q20. Number of possible paths to reach a ending point in Gameboard
 /*int Gameboard(int start, int end)
 {
     if (start == end)
@@ -410,7 +447,7 @@ int main()
     return 0;
 }*/
 
-// Q18. Number of possible paths to complete the Maze from an input starting point
+// Q21. Number of possible paths to complete the Maze from an input starting point
 /*int Maze(int size, int i, int j)
 {
     if (i == size - 1 && j == size - 1)
@@ -431,7 +468,7 @@ int main()
     return 0;
 }*/
 
-// Q19. Number of possible ways to fill a larger tile with a smaller unit tile.
+// Q22. Number of possible ways to fill a larger tile with a smaller unit tile.
 /*int Tilling(int n)
 {
     if (n == 1)
@@ -450,7 +487,7 @@ int main()
     return 0;
 }*/
 
-// Q20. Friends pairing problem
+// Q23. Friends pairing problem
 /*int friends(int n)
 {
     if (n == 0 || n == 1 || n == 2)
@@ -467,7 +504,7 @@ int main()
     return 0;
 }*/
 
-// Q20. 0-1 Knapsack
+// Q24. 0-1 Knapsack
 /*int knapsack(int value[], int weight[], int n, int Weight)
 {
     if (n == 0 || Weight == 0)
@@ -496,7 +533,7 @@ int main()
     return 0;
 }*/
 
-// Q21. Rat in a Maze using Backtracking
+// Q25. Rat in a Maze using Backtracking
 /*bool check(int **arr, int x, int y, int size)
 {
     if (x < size && y < size && arr[x][y] == 1)
@@ -563,7 +600,7 @@ int main()
     return 0;
 }*/
 
-// Q22. N-Queen using Backtracking
+// Q26. N-Queen using Backtracking
 /*bool check(int **arr, int x, int y, int size)
 {
     for (int i = 0; i < x; i++)
@@ -628,7 +665,7 @@ int main()
     return 0;
 }*/
 
-// Q23. Permutations for given n and r
+// Q27. Permutations for given n and r
 /*int permute(int n, int r)
 {
     if (r == 0)
@@ -648,7 +685,7 @@ int main()
     return 0;
 }*/
 
-// Q24. Combination for given n and r
+// Q28. Combination for given n and r
 /*int combination(int n, int r)
 {
     if (n == r)
@@ -670,8 +707,8 @@ int main()
     return 0;
 }*/
 
-// Q25. Generate all the possible permutations of an input array
-void arrPermute(string arr, int I, int n)
+// Q29. Generate all the possible permutations of an input array containing distinct elements
+/*void arrPermute(int arr[], int I, int n)
 {
     if (I == n - 1)
     {
@@ -693,11 +730,121 @@ void arrPermute(string arr, int I, int n)
 
 int main()
 {
-    string arr;
-    cout << "Enter the input string ";
-    getline(cin, arr);
-    int n = arr.size();
+    int n;
+    cout << "Enter the number of elements req. ";
+    cin >> n;
+
+    int arr[n];
+    cout << "Enter the input number array ";
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
+
     cout << "The number of permutations of the input array is\n";
     arrPermute(arr, 0, n);
     return 0;
+}*/
+
+// Shortcut Appraoch using STL function
+/*void display(int arr[], int n)
+{
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+    cout << endl;
 }
+int main()
+{
+    int n;
+    cout << "Enter the number of elements req. ";
+    cin >> n;
+    int arr[n];
+    cout << "Enter the input number array ";
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
+
+    cout << "The permutations of the input array is\n";
+    sort(arr, arr + n);
+    do
+    {
+        display(arr, n);
+    } while (next_permutation(arr, arr + n));
+    return 0;
+}*/
+
+// Q30. Pattern print using recursion
+/*i)1
+    1 2
+    1 2 3
+    1 2 3..n*/
+/*void pattern_1(int n)
+{
+    if (n == 0)
+        return;
+    pattern_1(n - 1);
+    for (int i = 1; i <= n; i++)
+        cout << i << " ";
+    cout << endl;
+}
+
+int main()
+{
+    int n;
+    cout << "Enter the value for n ";
+    cin >> n;
+    pattern_1(n);
+    return 0;
+}*/
+
+/*ii)1 2 3..n
+     1 2 3
+     1 2
+     1*/
+/*void pattern_2(int n)
+{
+    if (n == 0)
+        return;
+    for (int i = 1; i <= n; i++)
+        cout << i << " ";
+    cout << endl;
+    pattern_2(n - 1);
+}
+
+int main()
+{
+    int n;
+    cout << "Enter the value for n ";
+    cin >> n;
+    pattern_2(n);
+    return 0;
+}*/
+
+/*iii)1 2 3..n
+     1 2 3
+     1 2
+     1
+     1 2
+     1 2 3
+     1 2 3..n*/
+/*void pattern_3(int n)
+{
+    if (n == 1)
+    {
+        cout << "1" << endl;
+        return;
+    }
+    for (int i = 1; i <= n; i++)
+        cout << i << " ";
+    cout << endl;
+    pattern_3(n - 1);
+    for (int i = 1; i <= n; i++)
+        cout << i << " ";
+    cout << endl;
+}
+
+int main()
+{
+    int n;
+    cout << "Enter the value for n ";
+    cin >> n;
+    pattern_3(n);
+    return 0;
+}*/
