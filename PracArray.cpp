@@ -311,7 +311,97 @@ void iSort(int arr[], int n)
 }
 */
 
-// Q9. Max till i
+// Q9. DNF sort/0-1-2 sort
+/*void Swap(int arr[], int a, int b)
+{
+    int temp = arr[a];
+    arr[a] = arr[b];
+    arr[b] = temp;
+}
+
+void dnfSort(int arr[], int low, int mid, int high)
+{
+    while (mid <= high)
+    {
+        if (arr[mid] == 0)
+        {
+            Swap(arr, low, mid);
+            low++;
+            mid++;
+        }
+        if (arr[mid] == 1)
+            mid++;
+        if (arr[mid] == 2)
+        {
+            Swap(arr, mid, high);
+            high--;
+        }
+    }
+    return;
+}
+int main()
+{
+    int n;
+    cout << "Enter the number of (0/1/2) req. ";
+    cin >> n;
+
+    int arr[n];
+    for (int i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+        cout << "\n";
+    }
+
+    dnfSort(arr, 0, 0, n - 1);
+    cout << "The sorted array is\n";
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+    return 0;
+}*/
+
+// Q10. Wave sort
+/*void Swap(int arr[], int a, int b)
+{
+    int temp = arr[a];
+    arr[a] = arr[b];
+    arr[b] = temp;
+}
+
+void waveSort(int arr[], int n)
+{
+    for (int i = 1; i < n; i += 2)
+    {
+        if (arr[i] > arr[i - 1])
+            Swap(arr, i, i - 1);
+        if ((arr[i] > arr[i + 1]) && (i < n - 1))
+            Swap(arr, i, i + 1);
+    }
+    return;
+}
+
+int main()
+{
+    int n;
+    cout << "Enter the number of req. ";
+    cin >> n;
+
+    int arr[n];
+    for (int i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+        cout << "\n";
+    }
+
+    waveSort(arr, n);
+    cout << "The wavely sorted array is\n";
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+    return 0;
+}*/
+
+// Q11. Max till i
 /*void  maxTill_i(int [], int);
 
 int main()
@@ -354,7 +444,7 @@ void maxTill_i(int arr[], int i)
     return;
 }*/
 
-// Q10. Sum of all the sub arrays
+// Q12. Sum of all the sub arrays
 /*void sum_subarrays(int [], int );
 
 int main()
@@ -392,7 +482,7 @@ void sum_subarrays(int arr[], int n)
     return;
 }*/
 
-// Q11. Longest arithmatic subarray
+// Q13. Longest arithmatic subarray
 /*int LASA(int [], int);
 
 int main()
@@ -430,7 +520,7 @@ int LASA(int arr[], int n)
     return(count);
 }*/
 
-// Q12. Record breaking day
+// Q14. Record breakers
 /*int RBD(int [], int);
 
 int main()
@@ -470,7 +560,7 @@ int RBD(int arr[],int n)
     return(rbd);
 }*/
 
-// Q13. First repeating element's index
+// Q15. First repeating element's index
 /*int index(int [], int);
 
 int main()
@@ -501,7 +591,7 @@ int index(int arr[], int n)
     }
 }*/
 
-// Q14. Subarray with given sum
+// Q16. Subarray with given sum
 /*void subsum(int [], int, int);
 
 int main()
@@ -544,7 +634,7 @@ void subsum(int a[], int n, int s)
     return;
 }*/
 
-// Q15. Smallest positive missing number
+// Q17. Smallest positive missing number
 /*int missing(int[], int);
 
 int main()
@@ -583,7 +673,7 @@ int missing(int arr[], int n)
     return miss;
 }*/
 
-// Q16. Printing all possible sub array
+// Q18. Printing all possible sub array
 /*void allpossiblesubarr(int[],int);
 
 int main()
@@ -617,7 +707,7 @@ void allpossiblesubarr(int a[], int n)
     return;
 }*/
 
-// Q17. Max sub-array sum -> O(n^3)
+// Q19. Max sub-array sum -> O(n^3)
 /*int maxsumsubarr(int[], int);
 
 int main()
@@ -732,7 +822,7 @@ int maxsumsubarr(int arr[], int n)
     return(mx);
 }*/
 
-// Q18. Max circular sub-array sum
+// Q20. Max circular sub-array sum
 /*int maxcsumsubarr(int[], int);
 
 int main()
@@ -772,7 +862,7 @@ int maxcsumsubarr(int arr[], int n)
     return max(mx,wrapSum);
 }*/
 
-// Q19. Pair sum
+// Q21. Pair sum
 /*bool pairSum(int[], int, int);
 
 int main()
@@ -873,7 +963,7 @@ int main()
     return 0;
 }*/
 
-// Q20. Linear Search in 2-D array(matrix)
+// Q22. Linear Search in 2-D array(matrix)
 /*bool Search(int arr[][5], int m, int n, int key)
 {
     for(int i=0;i<m;i++)
@@ -920,15 +1010,71 @@ int main()
     {
         if (arr[i][j] == key)
             return true;
-        if (arr[i][j] < key)
+        if (arr[i][j] > key)
             j--;
         else
             i++;
     }
     return false;
+}
+
+int **sort(int **arr, int m, int n)
+{
+    int i, j, temp;
+
+    for (i = 0; i < m * n - 1; ++i)
+        for (j = 0; j < m * n - 1 - i; ++j)
+            if (arr[j / n][j % n] > arr[(j + 1) / n][(j + 1) % n])
+            {
+
+                temp = arr[(j + 1) / n][(j + 1) % n];
+                arr[(j + 1) / n][(j + 1) % n] = arr[j / n][j % n];
+                arr[j / n][j % n] = temp;
+            }
+    return arr;
+}
+
+int main()
+{
+    int m, n;
+    cout << "Enter the number of rows ";
+    cin >> m;
+    cout << "Enter the number of columns ";
+    cin >> n;
+    int **arr = new int *[m];
+    for (int i = 0; i < m; i++)
+        arr[i] = new int[n];
+
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cout << "arr[" << i << "][" << j << "] = ";
+            cin >> arr[i][j];
+        }
+        cout << endl;
+    }
+
+    arr = sort(arr, m, n);
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+            cout << "arr[" << i << "][" << j << "] = " << arr[i][j] << "  ";
+        cout << endl;
+    }
+
+    int key;
+    cout << "Enter the number to be searched ";
+    cin >> key;
+
+    if (search(arr, m, n, key))
+        cout << "Is the number present? -> " << std::boolalpha << search(arr, m, n, key);
+    else
+        cout << "Invalid Choice";
+    return 0;
 }*/
 
-// Q21. Spiral Order matrix traversal
+// Q23. Spiral Order matrix traversal
 /*void spiral(int arr[][10], int m, int n)
 {
     int rs=0, re=m-1, cs=0, ce=n-1;
@@ -979,7 +1125,7 @@ int main()
     return 0;
 }*/
 
-// Q21. Transpose of a matrix
+// Q24. Transpose of a matrix
 /*void transpose(int arr[][10], int m, int n)
 {
     for(int i=0;i<m;i++)
@@ -1023,7 +1169,7 @@ int main()
     return 0;
 }*/
 
-// Q22. Multiplication of matrices
+// Q25. Multiplication of matrices
 /*void multiply(int a[][10], int b[][10], int m, int n, int o)
 {
     int c[m][o];
@@ -1047,11 +1193,11 @@ int main()
 int main()
 {
     int m, n, o;
-    cout<<"Enter the number of ,ms ";
+    cout<<"Enter the number of rows ";
     cin>>m;
-    cout<<"Enter the number of columns ";
+    cout<<"Enter the number of columns(matrix 1) ";
     cin>>n;
-    cout<<"Enter the number of columns ";
+    cout<<"Enter the number of columns(matrix 2) ";
     cin>>o;
 
     int a[m][10];
@@ -1077,40 +1223,5 @@ int main()
     }
     cout<<"The multiplied matrix is \n";
     multiply(a, b, m, n, o);
-    return 0;
-}*/
-
-// Q23. String pallindrome
-/*bool pallindrome(char arr[], int n)
-{
-    int first = 0, last = n - 1;
-    while (first < last)
-    {
-        if (arr[first] == arr[last])
-        {
-            first++;
-            last--;
-        }
-        else
-            return false;
-    }
-    return true;
-}
-
-int main()
-{
-    int n;
-    cout << "Number of character required";
-    cin >> n;
-
-    char arr[n + 1];
-    cin >> arr;
-
-    pallindrome(arr, n);
-    cout << "Is the word pallindrome? -> ";
-    if (pallindrome(arr, n))
-        cout << std::boolalpha << pallindrome(arr, n);
-    else
-        cout << std::boolalpha << pallindrome(arr, n);
     return 0;
 }*/
