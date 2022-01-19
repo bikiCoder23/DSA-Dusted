@@ -848,3 +848,252 @@ int main()
     pattern_3(n);
     return 0;
 }*/
+
+// Q31. Merge sort
+/*void Merge(int arr[], int first, int mid, int last)
+{
+    int arr1[mid - first + 1], arr2[last - mid];
+    for (int i = 0; i < mid - first + 1; i++)
+        arr1[i] = arr[first + i];
+    for (int i = 0; i < last - mid; i++)
+        arr2[i] = arr[mid + 1 + i];
+    int i = 0, j = 0, idx = first;
+    while (i < (mid - first + 1) && j < (last - mid))
+    {
+        if (arr1[i] < arr2[j])
+        {
+            arr[idx] = arr1[i];
+            idx++;
+            i++;
+        }
+        else
+        {
+            arr[idx] = arr2[j];
+            idx++;
+            j++;
+        }
+    }
+    while (i < (mid - first + 1))
+    {
+        arr[idx] = arr1[i];
+        idx++;
+        i++;
+    }
+    while (j < last - mid)
+    {
+        arr[idx] = arr2[j];
+        idx++;
+        j++;
+    }
+}
+
+void mergeSort(int arr[], int first, int last)
+{
+    if (first < last)
+    {
+        int mid = (first + last) / 2;
+        mergeSort(arr, first, mid);
+        mergeSort(arr, mid + 1, last);
+        Merge(arr, first, mid, last);
+    }
+    return;
+}
+
+int main()
+{
+    int n;
+    cout << "Enter the number of element req. ";
+    cin >> n;
+
+    int arr[n];
+    for (int i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+        cout << "\n";
+    }
+
+    mergeSort(arr, 0, n - 1);
+    cout << "The sorted array is\n";
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+    return 0;
+}*/
+
+// Q32. Count Inversion
+/*long Merge(int arr[], int first, int mid, int last)
+{
+    int arr1[mid - first + 1], arr2[last - mid];
+    for (int i = 0; i < mid - first + 1; i++)
+        arr1[i] = arr[first + i];
+    for (int i = 0; i < last - mid; i++)
+        arr2[i] = arr[mid + 1 + i];
+    int i = 0, j = 0, idx = first;
+    long inv = 0;
+    while (i < (mid - first + 1) && j < (last - mid))
+    {
+        if (arr1[i] < arr2[j])
+        {
+            arr[idx] = arr1[i];
+            idx++;
+            i++;
+        }
+        else
+        {
+            arr[idx] = arr2[j];
+            inv += (mid - first + 1) - i;
+            idx++;
+            j++;
+        }
+    }
+    while (i < (mid - first + 1))
+    {
+        arr[idx] = arr1[i];
+        idx++;
+        i++;
+    }
+    while (j < last - mid)
+    {
+        arr[idx] = arr2[j];
+        idx++;
+        j++;
+    }
+    return inv;
+}
+
+long mergeSort(int arr[], int first, int last)
+{
+    long inv = 0;
+    if (first < last)
+    {
+        int mid = (first + last) / 2;
+        inv += mergeSort(arr, first, mid);
+        inv += mergeSort(arr, mid + 1, last);
+        inv += Merge(arr, first, mid, last);
+    }
+    return inv;
+}
+
+int main()
+{
+    int n;
+    cout << "Enter the number of element req. ";
+    cin >> n;
+
+    int arr[n];
+    for (int i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+        cout << "\n";
+    }
+
+    cout << "The number of Inversion are " << mergeSort(arr, 0, n - 1);
+    return 0;
+}*/
+
+// Q33. Quick sort
+/*void Swap(int *i, int *j)
+{
+    int temp;
+    temp = *i;
+    *i = *j;
+    *j = temp;
+}*/
+/*void Swap(int arr[], int a, int b)
+{
+    int temp = arr[a];
+    arr[a] = arr[b];
+    arr[b] = temp;
+}
+
+int Partition(int arr[], int first, int last)
+{
+    int pivot = arr[last];
+    int i = first - 1;
+    for (int j = first; j < last; j++)
+    {
+        if (arr[j] < pivot)
+        {
+            i++;
+            Swap(arr, i, j);
+        }
+    }
+    Swap(arr, i + 1, last);
+
+    return (i + 1);
+}
+void quickSort(int arr[], int first, int last)
+{
+    if (first < last)
+    {
+        int pivot = Partition(arr, first, last);
+
+        quickSort(arr, first, pivot - 1);
+        quickSort(arr, pivot + 1, last);
+    }
+    return;
+}
+
+int main()
+{
+    int n;
+    cout << "Enter the number of element req. ";
+    cin >> n;
+
+    int arr[n];
+    for (int i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+        cout << "\n";
+    }
+
+    quickSort(arr, 0, n - 1);
+    cout << "The sorted array is\n";
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+    return 0;
+}*/
+
+// Q34. Count Sort
+/*void countSort(int arr[], int n)
+{
+    int m = arr[0];
+    for (int i = 0; i < n; i++)
+        m = max(m, arr[i]);
+    int count[m + 1] = {0};
+    for (int i = 0; i < n; i++)
+        count[arr[i]]++;
+
+    for (int i = 0; i <= m; i++)
+        count[i] += count[i - 1];
+    int ans[n];
+    for (int i = n - 1; i >= 0; i--)
+        ans[--count[arr[i]]] = arr[i];
+
+    for (int i = 0; i < n; i++)
+        arr[i] = ans[i];
+    return;
+}
+
+int main()
+{
+    int n;
+    cout << "Enter the number of element req. ";
+    cin >> n;
+
+    int arr[n];
+    for (int i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+        cout << "\n";
+    }
+
+    countSort(arr, n);
+    cout << "The sorted array is\n";
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+    return 0;
+}*/
