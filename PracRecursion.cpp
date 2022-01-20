@@ -849,7 +849,27 @@ int main()
     return 0;
 }*/
 
-// Q31. Merge sort
+// Q31. Euclid's algorithm using recursion
+/*int gcd(int x, int y)
+{
+    if (x == 0)
+        return y;
+    return gcd(y % x, x);
+}
+
+int main()
+{
+    int a, b;
+    cout << "Enter the two input numbers for GCD ";
+    cin >> a >> b;
+    if (b > a)
+        cout << "The GCD/HCF using Euclid Algorithm is " << gcd(a, b);
+    else
+        cout << "The GCD/HCF using Euclid Algorithm is " << gcd(b, a);
+    return 0;
+}*/
+
+// Q32. Merge sort
 /*void Merge(int arr[], int first, int mid, int last)
 {
     int arr1[mid - first + 1], arr2[last - mid];
@@ -920,7 +940,7 @@ int main()
     return 0;
 }*/
 
-// Q32. Count Inversion
+// Q33. Count Inversion
 /*long Merge(int arr[], int first, int mid, int last)
 {
     int arr1[mid - first + 1], arr2[last - mid];
@@ -992,7 +1012,7 @@ int main()
     return 0;
 }*/
 
-// Q33. Quick sort
+// Q34. Quick sort
 /*void Swap(int *i, int *j)
 {
     int temp;
@@ -1056,7 +1076,7 @@ int main()
     return 0;
 }*/
 
-// Q34. Count Sort
+// Q35. Count Sort
 /*void countSort(int arr[], int n)
 {
     int m = arr[0];
