@@ -76,7 +76,7 @@ using namespace std;
     return 0;
 }*/
 
-// Q5. Factoral of a number
+// Q5. Factorial of a number
 /*int main()
 {
     int n, fact=1;
