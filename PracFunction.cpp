@@ -1,9 +1,9 @@
-#include<iostream>
-#include<cmath>
-#include<bits/stdc++.h>
+#include <iostream>
+#include <cmath>
+#include <bits/stdc++.h>
 using namespace std;
 
-//Q1. Prime number series betwen to numbers
+// Q1. Prime number series betwen to numbers
 /*bool prime_series(int);
 
 int main()
@@ -27,7 +27,7 @@ bool prime_series(int n)
     return true;
 }*/
 
-//Q2. Fibonacci
+// Q2. Fibonacci
 /*void fibo(int);
 
 int main()
@@ -51,7 +51,7 @@ void fibo(int n)
     return;
 }*/
 
-//Q3. Factorial of a number
+// Q3. Factorial of a number
 /*int factorial(int);
 
 int main()
@@ -71,7 +71,7 @@ int factorial(int a)
     return(fact);
 }*/
 
-//Q4. Combination nCr
+// Q4. Combination nCr
 /*int factorial(int);
 int combination(int, int);
 
@@ -98,7 +98,7 @@ int factorial(int a)
     return(fact);
 }*/
 
-//Q5. Pascal's Triangle
+// Q5. Pascal's Triangle
 /*int factorial(int);
 void pascal(int);
 int combination(int, int);
@@ -136,7 +136,7 @@ int factorial(int a)
     return(fact);
 }*/
 
-//Q6. Check odd-even
+// Q6. Check odd-even
 /*bool oddeven(int);
 
 int main()
@@ -159,7 +159,7 @@ bool  oddeven(int a)
         return(false);
 }*/
 
-//Q7. Check Alphabet
+// Q7. Check Alphabet
 /*bool alpha(int);
 
 int main()
@@ -167,7 +167,7 @@ int main()
     char a;
     cout<<"Enter any character ";
     cin>>a;
-    if(alpha(int(a)))    
+    if(alpha(int(a)))
         cout<<"The character "<<a<<" is an alphabet";
     else
         cout<<"The character "<<a<<" is not an alphabet";
@@ -182,7 +182,7 @@ bool alpha(int x)
         return(false);
 }*/
 
-//Q8. Max-Min
+// Q8. Max-Min
 /*void max(int,int,int);
 void min(int,int,int);
 
@@ -210,7 +210,7 @@ void max(int a, int b, int c)
         if(b>c)
             cout<<"MAX "<<b;
         else
-            cout<<"MAX "<<c;  
+            cout<<"MAX "<<c;
     }
     return;
 }
@@ -229,12 +229,12 @@ void min(int a, int b, int c)
         if(b<c)
             cout<<" MIN "<<b;
         else
-            cout<<" MIN "<<c;  
+            cout<<" MIN "<<c;
     }
     return;
 }*/
 
-//Q9. Swap value of variables
+// Q9. Swap value of variables
 /*void swap(int,int);
 
 int main()
@@ -256,7 +256,7 @@ void swap(int a, int b)
     return;
 }*/
 
-//Q10. Sum of n natural numbers
+// Q10. Sum of n natural numbers
 /*int sum(int);
 
 int main()
@@ -274,7 +274,7 @@ int sum(int a)
     return(sum);
 }*/
 
-//Q11. Pythagorean Triplet
+// Q11. Pythagorean Triplet
 /*bool pytha(int, int, int);
 
 int main()
@@ -306,7 +306,7 @@ int main()
                 return true;
             else
                 return false;
-        }      
+        }
     }
     else
     {
@@ -323,11 +323,11 @@ int main()
                 return true;
             else
                 return false;
-        }      
+        }
     }
 }*/
 
-//Another approach
+// Another approach
 /*bool pytha(int x, int y, int z)
 {
     int a=max(x, max(y, z)), b, c;
@@ -350,7 +350,7 @@ int main()
         return false;
 }*/
 
-//Q12. Binary to Decimal
+// Q12. Binary to Decimal
 /*int binary2decimal(int);
 
 int main()
@@ -375,7 +375,7 @@ int binary2decimal(int a)
     return(sum);
 }*/
 
-//Q13. Octal to Decimal
+// Q13. Octal to Decimal
 /*int octal2decimal(int);
 
 int main()
@@ -400,7 +400,7 @@ int octal2decimal(int a)
     return(sum);
 }*/
 
-//Q14. Hexadecimal to Decimal
+// Q14. Hexadecimal to Decimal
 /*int hexa2decimal(string);
 
 int main()
@@ -421,14 +421,14 @@ int hexa2decimal(string a)
     {
         if (a[i] >= '0' && a[i] <= '9')
             sum+=x*(a[i]-'0');
-        else if(a[i]>= 'A' && a[i]<= 'F')        
+        else if(a[i]>= 'A' && a[i]<= 'F')
             sum+=x*(a[i]-'A'+10);
         x*=16;
     }
     return(sum);
 }*/
 
-//Q15. Decimal to Binary
+// Q15. Decimal to Binary
 /*int decimal2binary(int);
 
 int main()
@@ -446,7 +446,7 @@ int decimal2binary(int a)
     while(x<=a)
         x*=2;
     x/=2;
-    
+
     while(x>0)
     {
         int last=a/x;
@@ -457,7 +457,7 @@ int decimal2binary(int a)
     return(sum);
 }*/
 
-//Q16. Decimal to Octal
+// Q16. Decimal to Octal
 /*int decimal2octal(int);
 
 int main()
@@ -486,7 +486,7 @@ int decimal2octal(int a)
     return(sum);
 }*/
 
-//Q17. Decimal to Hexadecimal
+// Q17. Decimal to Hexadecimal
 /*string decimal2hexa(int);
 
 int main()
@@ -522,7 +522,7 @@ string decimal2hexa(int a)
     return(sum);
 }*/
 
-//Q18. Addition of Binary numbers
+// Q18. Addition of Binary numbers
 /*int addbinary(int,int);
 int rev(int);
 
@@ -623,4 +623,77 @@ int rev(int a)
         a/=10;
     }
     return(ans);
+}*/
+
+// Q19. All the numbers divisible by two input numbers in a given range
+/*void divisible(int n, int a, int b)
+{
+    bool div[n + 1];
+    int count = 0;
+    for (int i = 1; i <= n; i++)
+        div[i] = false;
+    for (int i = 1; i <= n; i++)
+        if (i % a == 0 || i % b == 0)
+        {
+            div[i] = true;
+            count++;
+        }
+    cout << "The number of elements divisible by " << a << " & " << b << " within the given range is " << count << " & the numbers are\n";
+    for (int i = 1; i <= n; i++)
+        if (div[i])
+            cout << i << " ";
+    return;
+}
+
+int main()
+{
+    int n, a, b;
+    cout << "Enter the upper limit of the range ";
+    cin >> n;
+    cout << "Enter the two input numbers ";
+    cin >> a >> b;
+    divisible(n, a, b);
+    return 0;
+}*/
+
+// Count only approach
+/*int count(int n, int a, int b)
+{
+    int d1 = n / a, d2 = n / b, d12 = n / (a * b);
+    return d1 + d2 - d12;
+}
+
+int main()
+{
+    int n, a, b;
+    cout << "Enter the upper limit of the range ";
+    cin >> n;
+    cout << "Enter the two input numbers ";
+    cin >> a >> b;
+    cout << "The number of elements divisible by " << a << " & " << b << " within the given range is " << count(n, a, b);
+    return 0;
+}*/
+
+// Q20. GCD/HCF using Euclid Algorithm
+/*int gcd(int a, int b)
+{
+    while (b % a)
+    {
+        int c = b % a;
+        b = a;
+        a = c;
+    }
+    return a;
+}
+
+int main()
+{
+    int a, b;
+    cout << "Enter the two input numbers for GCD ";
+    cin >> a >> b;
+    if (b > a)
+        cout << "The GCD/HCF using Euclid Algorithm is " << gcd(a, b);
+    else
+        cout << "The GCD/HCF using Euclid Algorithm is " << gcd(b, a);
+    return 0;
 }*/
